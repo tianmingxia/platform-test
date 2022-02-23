@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>cn.iald</groupId>
+		<artifactId>platform-parent</artifactId>
+		<version>1.0</version>
+		<relativePath/>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>platform-test</artifactId>
+	<description>平台测试服务</description>
+	<version>1.0</version>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<!-- 权限通用jar  -->
+		<dependency>
+			<groupId>cn.iald</groupId>
+			<artifactId>platform-sys-currency</artifactId>
+			<version>1.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>cn.iald</groupId>
+					<artifactId>platform-oauth2-utils</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>cn.iald</groupId>
+			<artifactId>platform-oauth2-utils</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<!--配置中心客户端  -->
+		<dependency>
+			<groupId>cn.iald</groupId>
+			<artifactId>config-client</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!--mysql-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
